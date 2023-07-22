@@ -1,3 +1,5 @@
 <div class="app">
-	{{ title }}
+	<textarea class="app_textarea" v-model='jsonString' />
+
+	<button @click='generateForm(jsonString)'>Сгенерировать форму</button>
 </div>
