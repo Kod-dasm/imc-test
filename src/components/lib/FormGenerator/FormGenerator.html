@@ -1,0 +1,29 @@
+<transition name="form-generator">
+	<div class="form-generator_mask">
+		<div class="form-generator_wrapper">
+			<div class="form-generator_container">
+
+				<div class="form-generator_header">
+					<slot name="header">
+						default header
+					</slot>
+				</div>
+
+				<div class="form-generator_body">
+					<slot name="body">
+						{{ jsonObjects }}
+					</slot>
+				</div>
+
+				<div class="form-generator_footer">
+					<slot name="footer">
+						default footer
+						<button class="form-generator_default-button" @click="$emit('close')">
+							OK
+						</button>
+					</slot>
+				</div>
+			</div>
+		</div>
+	</div>
+</transition>

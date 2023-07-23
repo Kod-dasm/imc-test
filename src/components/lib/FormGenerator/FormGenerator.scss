@@ -1,0 +1,55 @@
+.form-generator {
+	&_mask {
+		position: fixed;
+		z-index: 9998;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgb(0 0 0 / 50%);
+		display: table;
+		transition: opacity 0.3s ease;
+	}
+
+	&_wrapper {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	&_container {
+		width: 300px;
+		margin: 0 auto;
+		padding: 20px 30px;
+		background-color: #fff;
+		border-radius: 2px;
+		box-shadow: 0 2px 8px rgb(0 0 0 / 33%);
+		transition: all 0.3s ease;
+		font-family: Helvetica, Arial, sans-serif;
+	}
+
+	&_header h3 {
+		margin-top: 0;
+		color: #42b983;
+	}
+
+	&_body {
+		margin: 20px 0;
+	}
+
+	&_default-button {
+		float: right;
+	}
+
+	&_enter {
+		opacity: 0;
+	}
+
+	&_leave-active {
+		opacity: 0;
+	}
+
+	&_enter &_container,
+	&_leave-active &_container {
+		transform: scale(1.1);
+	}
+}
