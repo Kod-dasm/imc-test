@@ -57,8 +57,28 @@ export default {
 
 		const treeDataForm = reactive<TreeNode[]>(getTree(jsonObjects.value))
 
+		const getParseNodes = (nodes: TreeNode[]): object => {
+			return Object.assign({}, ...nodes.map(node => ({
+				[node.code]: node.value ?? null,
+				...(node.childrens ? getParseNodes(node.childrens) : {})
+			})))
+		}
+
+		const getParseTree = (tree: TreeNode[]) => {
+			return tree.map(node => ({
+				[node.code]: node.value ?? null,
+				...(node.childrens ? getParseNodes(node.childrens) : {})
+			}))
+		}
+
+		const handleClose = (emitClose: () => void) => {
+			console.log('treeDataForm', JSON.stringify(getParseTree(treeDataForm), null, 2))
+			emitClose
+		}
+
 		return {
-			treeDataForm
+			treeDataForm,
+			handleClose
 		}
 	}
 }
