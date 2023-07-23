@@ -1,3 +1,3 @@
-<script src="./App.ts" />
+<script lang="ts" src="./App.ts" />
 <template src="./App.html" />
 <style scoped lang="scss" src="./App.scss" />

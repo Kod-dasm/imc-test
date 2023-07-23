@@ -1,3 +1,3 @@
-<script src="./FormField.ts" />
+<script lang="ts" src="./FormField.ts" />
 <template src="./FormField.html" />
 <style scoped lang="scss" src="./FormField.scss" />
