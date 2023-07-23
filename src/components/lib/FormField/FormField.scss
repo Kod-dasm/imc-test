@@ -1,4 +1,7 @@
 .form-field {
+	text-align: left;
+	font-size: 14px;
+
 	&_container {
 		padding: 50px;
 		border: 1px solid black;
@@ -10,7 +13,8 @@
 		margin-bottom: 20px;
 	}
 
-	&_container:last-child {
-		margin-bottom: 0;
+	input, select{
+		width:100%;
+		box-sizing:border-box;
 	}
 }

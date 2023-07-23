@@ -4,16 +4,13 @@
 			<div class="form-generator_container">
 
 				<div class="form-generator_header">
-					<button class="form-generator_default-button" @click="handleClose($emit('close'))">
+					<button class="form-generator_default-button" @click="$emit('close', JSON.stringify(getParseTree(treeDataForm), null, 2))">
 						&#215
 					</button>
 				</div>
 
 				<div class="form-generator_body">
 					<FormField v-for="treeNode in treeDataForm" :node="treeNode" />
-				</div>
-
-				<div class="form-generator_footer">
 				</div>
 			</div>
 		</div>

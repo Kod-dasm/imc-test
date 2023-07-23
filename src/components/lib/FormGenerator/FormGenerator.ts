@@ -13,7 +13,6 @@ export default {
 	},
 
 	setup(props: any) {
-		// const emit = defineEmits(['close'])
 		const { jsonObjects } = toRefs(props)
 
 		const getNode = (json: JsonObject[], index: number, code: string): TreeNode[] => {
@@ -71,14 +70,9 @@ export default {
 			}))
 		}
 
-		const handleClose = (emitClose: () => void) => {
-			console.log('treeDataForm', JSON.stringify(getParseTree(treeDataForm), null, 2))
-			emitClose
-		}
-
 		return {
 			treeDataForm,
-			handleClose
+			getParseTree
 		}
 	}
 }

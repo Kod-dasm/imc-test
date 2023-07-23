@@ -1,11 +1,12 @@
-<div name="form-field">
+<div class="form-field">
+	{{ node.code }}
 	<div v-if="node.type === 'container'" class="form-field_container" >
 		<template v-for="children in node.childrens">
 			<FormField :node="children" />
 		</template>
 	</div>
 	<select v-else-if="node.type === 'list'" class="form-field_item" v-model="node.value" >
-		<option v-for="option in node.listdata" :value="option.value" :key="option.key" >{{option.value}}</option>
+		<option v-for="option in node.listdata" :value="option.key" :key="option.key" >{{option.value}}</option>
 	</select>
 	<input v-else-if="node.type === 'datepicker'" class="form-field_item" type="date" v-model="node.value" />
 	<input v-else="node.type === 'input'" class="form-field_item" v-model="node.value" />

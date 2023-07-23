@@ -14,7 +14,7 @@ export default {
 		const isAnJsonObject = (obj: object): obj is JsonObject => 'type' in obj && 'code' in obj && 'parent' in obj
 			&& (Object.keys(obj).length > 3 ? 'listdata' in obj && 'value' in obj || 'value' in obj && Object.keys(obj).length < 5 : true)
 
-		const getJsonObject = (json: string): JsonObject[] | void => {
+		const getJsonObjects = (json: string): JsonObject[] | void => {
 			try {
 				const jsonObjects: JsonObject[] = JSON.parse(json)
 
@@ -31,7 +31,7 @@ export default {
 		}
 
 		const handleGenerateForm = (json: string) => {
-			jsonObjects.value = getJsonObject(json)
+			jsonObjects.value = getJsonObjects(json)
 			if(!jsonObjects.value) {
 				return alert('Данный JSON не соответствует шаблону для генерации формы')
 			}
@@ -39,11 +39,21 @@ export default {
 			return
 		}
 
+		const resultArrayObjects = ref('')
+
+		const handleCloseGenerateForm = (arrayObjects: string) => {
+			resultArrayObjects.value = arrayObjects
+			showModalFormGenerator.value = false
+		}
+
 		return {
 			jsonString,
-			showModalFormGenerator,
 			jsonObjects,
-			handleGenerateForm
+			resultArrayObjects,
+
+			showModalFormGenerator,
+			handleGenerateForm,
+			handleCloseGenerateForm
 		}
 	}
 }

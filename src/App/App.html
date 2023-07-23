@@ -2,5 +2,8 @@
 	<textarea class="app_textarea" v-model='jsonString' />
 
 	<button @click='handleGenerateForm(jsonString)'>Сгенерировать форму</button>
-	<FormGenerator :jsonObjects="jsonObjects" v-if="showModalFormGenerator" @close="showModalFormGenerator = false" />
+
+	<pre v-if="resultArrayObjects.length" class="app_result">{{ resultArrayObjects }}</pre>
+
+	<FormGenerator :jsonObjects="jsonObjects" v-if="showModalFormGenerator" @close="handleCloseGenerateForm" />
 </div>
