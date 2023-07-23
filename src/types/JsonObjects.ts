@@ -13,3 +13,7 @@ export interface JsonObject {
 	listdata?: ListData[]
 	value?: Value
 }
+
+export interface TreeNode extends JsonObject {
+	children?: TreeNode[]
+}
