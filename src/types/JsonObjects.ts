@@ -15,5 +15,5 @@ export interface JsonObject {
 }
 
 export interface TreeNode extends JsonObject {
-	children?: TreeNode[]
+	childrens?: TreeNode[]
 }

@@ -1,4 +1,5 @@
 import { JsonObject, TreeNode } from '@/types/JsonObjects'
+import FormField from '../FormField/FormField.vue'
 
 import { toRefs, reactive } from 'vue'
 
@@ -8,9 +9,11 @@ export default {
 	},
 
 	components: {
+		FormField,
 	},
 
 	setup(props: any) {
+		// const emit = defineEmits(['close'])
 		const { jsonObjects } = toRefs(props)
 
 		const getNode = (json: JsonObject[], index: number, code: string): TreeNode[] => {
@@ -20,7 +23,7 @@ export default {
 					if (json[i].type === 'container') {
 						nodes.push({
 							...json[i],
-							children: getNode(json, i, json[i].code),
+							childrens: getNode(json, i, json[i].code),
 						})
 						continue
 					}
@@ -39,7 +42,7 @@ export default {
 					if (obj.type === 'container') {
 						tree.push({
 							...obj,
-							children: getNode(json, index, obj.code),
+							childrens: getNode(json, index, obj.code),
 						})
 					}
 					else {

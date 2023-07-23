@@ -2,7 +2,5 @@
 	<textarea class="app_textarea" v-model='jsonString' />
 
 	<button @click='handleGenerateForm(jsonString)'>Сгенерировать форму</button>
-	<FormGenerator :jsonObjects="jsonObjects" v-if="showModalFormGenerator" @close="showModalFormGenerator = false">
-		<h3 slot="header">custom header</h3>
-	</FormGenerator>
+	<FormGenerator :jsonObjects="jsonObjects" v-if="showModalFormGenerator" @close="showModalFormGenerator = false" />
 </div>

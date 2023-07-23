@@ -1,3 +1,16 @@
 .form-field {
-	color: black;
+	&_container {
+		padding: 50px;
+		border: 1px solid black;
+		margin-bottom: 20px;
+	}
+
+	&_item {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+
+	&_container:last-child {
+		margin-bottom: 0;
+	}
 }

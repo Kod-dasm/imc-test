@@ -4,24 +4,16 @@
 			<div class="form-generator_container">
 
 				<div class="form-generator_header">
-					<slot name="header">
-						default header
-					</slot>
+					<button class="form-generator_default-button" @click="$emit('close')">
+						&#215
+					</button>
 				</div>
 
 				<div class="form-generator_body">
-					<slot name="body">
-						{{ treeDataForm }}
-					</slot>
+					<FormField v-for="treeNode in treeDataForm" :node="treeNode" />
 				</div>
 
 				<div class="form-generator_footer">
-					<slot name="footer">
-						default footer
-						<button class="form-generator_default-button" @click="$emit('close')">
-							OK
-						</button>
-					</slot>
 				</div>
 			</div>
 		</div>
